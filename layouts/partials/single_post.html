@@ -1,4 +1,3 @@
-{{- partial "inject/content-before.html" . -}}
 <article class="card single">
     {{ if .Params.showTitle | default true }}
         <h1>{{ .Title }}</h1>
@@ -51,6 +50,5 @@
         {{ end }}
     </p>
 {{ end }}
-{{- partial "inject/content-after.html" . -}}
 {{- partial "cactus_chat.html" . -}}
 {{- partial "related_articles.html" . -}}

@@ -1,5 +1,4 @@
 <header class="{{ if .IsHome }}jumbotronContainer{{ end }}">
-    {{- partial "inject/header-before.html" . -}}
     <div class="titleAndSearchContainer">
         <div id="titleContainer">
             {{ if not (.Site.Params.logoRightOfTitle | default false) }}
@@ -58,6 +57,5 @@
             </div>
         {{ end }}
     {{ end }}
-    {{- partial "inject/header-after.html" . -}}
     {{- partial "jumbotron.html" . -}}
 </header>
