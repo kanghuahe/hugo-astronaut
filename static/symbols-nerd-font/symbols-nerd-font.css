@@ -1,0 +1,8 @@
+/* symbols-2048-em-nerd-font-complete */
+@font-face {
+	font-family: Symbols Nerd Font;
+	font-style: normal;
+	font-weight: 400;
+	src: local("Symbols Nerd Font Mono"), url(symbols-nerd-font-mono.woff2) format("woff2");
+}
+
