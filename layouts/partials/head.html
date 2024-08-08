@@ -22,13 +22,9 @@
         {{ if and (.Title) (ne .Title .Site.Title) }}
             {{ .Title }}  &ndash;
         {{ end }}
-        {{ .Site.Title | default "Ficurinia" }}
+        {{ .Site.Title | default "KanghuaHe" }}
     </title>
 
-    {{/*
-        how to update these hashes:
-        https://gitlab.com/gabmus/hugo-ficurinia/-/merge_requests/5
-    */}}
     <link href="/symbols-nerd-font/symbols-nerd-font.css" rel="stylesheet"/>
     <link href="/jetbrains-mono/jetbrains-mono.css" rel="stylesheet"/>
 
