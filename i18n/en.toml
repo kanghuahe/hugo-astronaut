@@ -41,3 +41,15 @@ other = "More posts like this"
 
 [noResultsFound]
 other = "No results found"
+
+[wordCount]
+other = "wordCount"
+
+[words]
+other = "words"
+
+[readingTime]
+other = "readingTime"
+
+[time]
+other = "mins"

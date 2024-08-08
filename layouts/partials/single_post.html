@@ -6,7 +6,13 @@
     {{ if (.Params.showDate | default true) }}
         <p class="date">
             <span title='{{ i18n "date" }}'>󰃭 </span>
-            {{- partial "date.html" .Date -}}
+            {{- partial "date.html" .Date -}} |
+
+            <span title='{{ i18n "wordCount" }}'> </span>
+            {{ .WordCount }} {{i18n "words"}} |
+            
+            <span title='{{ i18n "readingTime" }}'> </span>
+            {{ .ReadingTime }} {{i18n "time"}}
         </p>
     {{ end }}
     {{ if and (.Params.toc | default false) (.Site.Params.tocBeforeImage | default false) }}
