@@ -4,15 +4,9 @@
     {{ end }}
     <ul id="main-nav">
         <li><a href="/">{{ i18n "home" }}</a></li>
-        {{ if (.Site.Params.showPostsLink | default true) }}
-            <li><a href="/posts/">{{ i18n "posts" }}</a></li>
-        {{ end }}
+        <li><a href="/posts/">{{ i18n "posts" }}</a></li>
         <li><a href="/categories">{{ i18n "categories" }}</a></li>
-        {{ if (.Site.Params.showTags | default true) }}
-            <li><a href="/tags/">{{ i18n "tags" }}</a></li>
-        {{ end }}
-        {{ if (.Site.Params.showAboutLink | default true) }}
-            <li><a href="/about/">About</a></li>
-        {{ end }}
+        <li><a href="/tags/">{{ i18n "tags" }}</a></li>
+        <li><a href="/about/">{{ i18n "about" }}</a></li>
     </ul>
 </nav>

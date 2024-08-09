@@ -10,6 +10,9 @@ other = "标签"
 [categories]
 other = "分类"
 
+[about]
+other = "关于"
+
 [date]
 other = "日期"
 

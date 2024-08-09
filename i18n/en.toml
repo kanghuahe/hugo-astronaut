@@ -10,6 +10,9 @@ other = "Tags"
 [categories]
 other = "Categories"
 
+[about]
+other = "About"
+
 [date]
 other = "Date"
 
