@@ -7,6 +7,9 @@ other = "Search"
 [tags]
 other = "Tags"
 
+[categories]
+other = "Categories"
+
 [date]
 other = "Date"
 
@@ -35,6 +38,12 @@ other = "Tags:"
 
 [tagColumn]
 other = "Tag:"
+
+[categoriesColumn]
+other = "Categories:"
+
+[categoryColumn]
+other = "Category:"
 
 [morePostsLikeThis]
 other = "More posts like this"

@@ -1,22 +1,35 @@
 <h2>
     {{ $title := .Title }}
     {{ $section := .Section | humanize }}
-    {{ if and (ne $section $title) (ne $section "Tags") (ne $title (printf "%ss" $section)) }}
-        {{ $section }}:
+
+    {{ if and (eq $section "Categories") (eq $section $title) }}
+        {{ i18n "categoriesColumn" }}
+    {{ else }}
+        {{ if and (eq $section "Categories") (ne $section $title) }}
+            {{ i18n "categoryColumn" }} {{ $title }}
+        {{ end }}
     {{ end }}
+
     {{ if and (eq $section "Tags") (eq $section $title) }}
         {{ i18n "tagsColumn" }}
     {{ else }}
-        {{ if and (eq $section "Tags") (ne $section $title) }}{{ i18n "tagColumn" }} #{{ end }}{{ $title }}
+        {{ if and (eq $section "Tags") (ne $section $title) }}
+            {{ i18n "tagColumn" }} #{{ $title }}
+        {{ end }}
     {{ end }}
 </h2>
 <ul class="list">
     {{ if and (eq $section "Tags") (eq $section $title) }}
-        {{/* if we're in the Tags section, sort alphabetically and don't show the date */}}
         {{ range (sort .Pages "Title") }}
             <li>
-                <a href="{{ .Permalink }}">#{{ .Title }}</a>
+                <a href="{{ .Permalink }}">#{{ .Title }}<sup>{{.Pages.Len}}</sup></a>
             </li>
+        {{ end }}
+    {{ else if and (eq $section "Categories") (eq $section $title) }}
+        {{ range (sort .Pages "Title") }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .Title }}<sup>{{.Pages.Len}}</sup></a>
+        </li>
         {{ end }}
     {{ else }}
         {{ range .Pages }}

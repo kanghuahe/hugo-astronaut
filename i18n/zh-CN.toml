@@ -7,6 +7,9 @@ other = "搜索"
 [tags]
 other = "标签"
 
+[categories]
+other = "分类"
+
 [date]
 other = "日期"
 
@@ -36,6 +39,12 @@ other = "标签:"
 
 [tagColumn]
 other = "标签:"
+
+[categoriesColumn]
+other = "分类:"
+
+[categoryColumn]
+other = "分类:"
 
 [morePostsLikeThis]
 other = "更多相关文章"
