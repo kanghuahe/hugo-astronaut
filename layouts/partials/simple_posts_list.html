@@ -36,17 +36,20 @@
         </li>
         {{ end }}
     {{ else }}
-        {{ range .Pages }}
-            <li>
-                <div>
-                    <span class="date">
-                        {{- partial "date.html" .Date -}}
-                    </span>
-                    <span>
-                        <a href="{{ .Permalink }}">{{ .Title }}</a>
-                    </span>
-                </div>
-            </li>
+        {{ range .Pages.GroupByDate "2006-01" "desc" }}
+            <h3>{{ .Key }}</h3>
+            {{ range .Pages }}
+                <li>
+                    <div>
+                        <span class="date">
+                            {{- partial "date.html" .Date -}}
+                        </span>
+                        <span>
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </span>
+                    </div>
+                </li>
+            {{ end }}
         {{ end }}
     {{ end }}
 </ul>
