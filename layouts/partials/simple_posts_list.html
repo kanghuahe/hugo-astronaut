@@ -2,19 +2,23 @@
     {{ $title := .Title }}
     {{ $section := .Section | humanize }}
 
-    {{ if and (eq $section "Categories") (eq $section $title) }}
-        {{ i18n "categoriesColumn" }}
+    {{if and ( and (ne $section "Categories") (ne $section "Tags")) (eq $section $title)}}
+        {{$section}}
     {{ else }}
-        {{ if and (eq $section "Categories") (ne $section $title) }}
-            {{ i18n "categoryColumn" }} {{ $title }}
+        {{ if and (eq $section "Categories") (eq $section $title) }}
+            {{ i18n "categoriesColumn" }}
+        {{ else }}
+            {{ if and (eq $section "Categories") (ne $section $title) }}
+                {{ i18n "categoryColumn" }} {{ $title }}
+            {{ end }}
         {{ end }}
-    {{ end }}
 
-    {{ if and (eq $section "Tags") (eq $section $title) }}
-        {{ i18n "tagsColumn" }}
-    {{ else }}
-        {{ if and (eq $section "Tags") (ne $section $title) }}
-            {{ i18n "tagColumn" }} #{{ $title }}
+        {{ if and (eq $section "Tags") (eq $section $title) }}
+            {{ i18n "tagsColumn" }}
+        {{ else }}
+            {{ if and (eq $section "Tags") (ne $section $title) }}
+                {{ i18n "tagColumn" }} #{{ $title }}
+            {{ end }}
         {{ end }}
     {{ end }}
 </h2>
