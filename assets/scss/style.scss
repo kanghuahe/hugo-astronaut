@@ -90,7 +90,7 @@ $main_font: {{ .Site.Params.fontFamily | default "JetBrains Mono" }};
 $title_font: {{ .Site.Params.titleFontFamily | default "$main_font" }};
 $mono_font: {{ .Site.Params.monospaceFontFamily | default "JetBrains Mono" }};
 $symbols_font: "Symbols Nerd Font";
-$content_width: {{ .Site.Params.contentWidth | default "1000px" }};
+$content_width: {{ .Site.Params.contentWidth | default "1200px" }};
 $border_radius: 10px;
 $margin: 15px;
 
@@ -976,7 +976,7 @@ header.jumbotronContainer {
 {{ end }}
 
 {{ if .Site.Params.enableSidebarLayout | default false }}
-    $sidebar_width: 350px;
+    $sidebar_width: 300px;
 
     header {
         #sidebar_nav, .sidebarToc {
