@@ -40,12 +40,9 @@ summaryLength = 70  # number of words for article summaries
 
     posts = "posts"  # content directory where to find home page posts; default searches in "posts" and "post"
     showPostsLink = true  # show or hide the link to the simple post list
-    extraContentDirs = []  # other content directories to render similarly to the home page
-    showcaseDir = "showcase"  # create a content directory that shows a special showcase section in the home page
 
     # shows a specified single page as a home page, instead of the traditional articles list
     # requires setting `homeSinglePage`
-    # goes well with extraContentDirs
     showSinglePageAsHome = false
     homeSinglePage = "/home"
 
@@ -88,39 +85,19 @@ summaryLength = 70  # number of words for article summaries
     inputStyle = "standard" # changes the style of inputs (like the searchbar), available styles are: "standard", "buttons"
 
     enableSearch = true  # enable search page
-    searchbarEverywhere = true  # if the searchbar should be shown in every page; requires enableSearch
-    searchMenuLink = false  # add a search link to the navigation menu; requires enableSearch
+    searchbarEverywhere = true  # if the searchbar should be shown in every page; requires 
     mobileHamburgerNav = false  # alternative hamburger menu layout for the main nav menu when screen is small
 
     enableFeatured = false  # enable a particular view for articles marked as featured (featured: true in the article frontmatter)
 
     underlineTitleLinks = false  # show an underline also for links that are titles
 
-    # enable comments support with commento using the script from your server
-    commento = "https://example.com/js/commento.js"
-
-    # enable comments support with cactus comments (cactus.chat)
-    cactusCommentsSiteName = "example.com"
-    cactusCommentsServerName = "cactus.chat"
-    cactusCommentsHomeserver = "https://matrix.cactus.chat:8448"
-
-    # enable analytics using Plausible
-    plausibleScriptUrl = "https://something.com/..."
-    plausibleDomain = "example.com"
-
     # enable analytics using Umami
     umamiScriptUrl = "https://something.com/..."
     umamiWebsiteId = "example-tracking-code"
 
-    enableShareOnFediverse = false  # enable a button at the end of an article to share it on the fediverse
     tocBeforeImage = false  # show the table of contents before the main article image; default false
 
-    # WARNING: deprecated! Use [[menu.icons]] instead, look below
-    # links = [
-    #     ["GitLab", "https://gitlab.com/gabmus"],
-    #     ["GNOME", "https://gitlab.gnome.org/gabmus"],
-    #     ["YouTube", "https://youtube.com/TechPillsNet"]
-    # ]
 
     # you can customize all of the colors in this theme
     # Colors are defined in data/colors.yml
@@ -147,15 +124,6 @@ summaryLength = 70  # number of words for article summaries
     randomRelated = false  # sorts related articles in random order (randomized at built time)
 
 [menu]
-    # these links will be added to the main navigation menu, sorted by weight
-    # other elements in this menu are added automatically from the "pages" folder
-    # the folder it will look into can be customized with the pages variable
-    # in params above
-    [[menu.main]]
-        identifier = "about"
-        name = "About"
-        url = "/about/"
-        weight = 10
     # these links (menu.icons) will be added as icon links below the main nav
     [[menu.icons]]
         identifier = "gitlab"
@@ -285,43 +253,3 @@ You can tweak the TOC settings in your `config.toml`:
     ordered = false
     startLevel = 1
 ```
-
-# Generate icons
-
-It's best to use the provided `generate_icons.sh` script to generate all necessary icons for your website. This script requires ImageMagick, that you will need to install separately.
-
-For the best results, place your logo in svg format inside the `static` directory of your website, rename it to `logo.svg` and then call `./themes/hugo-ficurinia/generate_icons.sh static/logo.svg`.
-
-The script will take care of generating all the icons you need.
-
-Finally, make sure to edit your config.toml to include the following:
-
-```toml
-# ...
-[params]
-    logo = "/logo.svg"
-    logoAltText = "Logo"
-    favicon = "/favicon.png"
-    faviconIco = "/favicon.ico"
-    appletouch = "/apple-touch-icon.png"
-    svgicon = "/logo.svg"
-    # ...
-```
-
-# Inject custom content
-
-Ficurinia supports injecting custom content into the theme. There are several files you can create in `layouts/partials/inject` that will be included inside the theme in different places.
-
-| Partial | Placement |
-|---------|-----------|
-| `layouts/partials/inject/body.html` | Before closing the `body` tag |
-| `layouts/partials/inject/content-after.html` | After a post or page content |
-| `layouts/partials/inject/content-before.html` | Before a post or page content |
-| `layouts/partials/inject/footer.html` | At the beginning of the footer |
-| `layouts/partials/inject/head.html` | Before closing the `head` tag |
-| `layouts/partials/inject/header-after.html` | Before closing the header |
-| `layouts/partials/inject/header-before.html` | At the beginning of the header |
-
-# Does *Ficurinia* mean anything?
-
-It's Sicilian for Indian fig, also known as prickly pear cactus.
