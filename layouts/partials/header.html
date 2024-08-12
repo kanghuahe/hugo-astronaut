@@ -33,9 +33,6 @@
         {{ if .Site.Params.showRss | default true }}
             {{- partial "iconlink" (dict "Identifier" "rss" "Name" "RSS" "URL" "/index.xml") -}}
         {{ end }}
-        {{ range .Site.Params.links }}
-            {{- partial "nerdlink" . -}}
-        {{ end }}
         {{ range .Site.Menus.icons }}
             {{- partial "iconlink" . -}}
         {{ end }}

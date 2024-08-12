@@ -457,50 +457,6 @@ ul.list {
     }
 }
 
-#commento {
-    margin-top: $margin;
-    color: var(--default_fg);
-    font-family: $symbols_font, $main_font, monospace;
-    textarea, #commento-markdown-help-root {
-        background: rgba(255, 255, 255, .05);
-        color: var(--default_fg);
-        border-radius: 0;
-        border: none;
-        td, td>*, td>*>* {
-            color: var(--default_fg);
-            pre {
-                font-family: $symbols_font, $mono_font, monospace;
-                color: var(--default_dim_fg);
-            }
-        }
-    }
-    #commento-submit-button-root {
-        background: var(--default_accent);
-        color: var(--default_fg);
-    }
-    .commento-name {
-        color: var(--default_dim_fg);
-    }
-    .commento-sort-policy-buttons {
-        a {
-            border-bottom: none;
-        }
-        .commento-sort-policy-button-selected {
-            color: var(--default_accent);
-        }
-    }
-    .commento-card {
-        border-top: none;
-        margin: 25px 0;
-    }
-    .commento-body {
-        >*, *>*, >*>*>*, >*>*>*>*, >*>*>*>*>* {
-            color: var(--default_fg);
-            font-family: $symbols_font, $main_font, monospace;
-        }
-    }
-}
-
 .search {
     display: flex;
     flex-direction: row;
@@ -690,29 +646,13 @@ a.buttonTag {
     @include roundButtonLike;
 }
 
-.cactus-button, .cactus-login-buttons > button {
-    font-family: $main_font;
-    padding: 0;
-    margin: 5px 0 5px $margin !important;
-    @include buttonLike;
-    transition-property: border-color, background-color !important;
-    transition-duration: .15s;
-    transition-timing-function: ease-in-out;
-    opacity: 1 !important;
-    &[disabled] {
-        opacity: .5 !important;
-        border-color: transparent !important;
-        background-color: transparent !important;
-        box-shadow: none;
-    }
-}
 
 .shareBtn, button {
     @include buttonLike;
     cursor: pointer;
 }
 
-input, textarea, textarea.cactus-editor-textarea {
+input, textarea {
     {{ if (eq (site.Params.inputStyle | default "standard") "buttons") }}
         @include buttonLike;
     {{ else }}
@@ -731,113 +671,6 @@ input, textarea, textarea.cactus-editor-textarea {
     &:focus, &:active {
         border-color: var(--default_accent) !important;
         outline: none;
-    }
-}
-
-.cactus-editor-name {
-    box-sizing: border-box;
-    max-width: 100%;
-    min-width: 10px;
-}
-
-.cactus-login-form {
-   {{ if (eq (site.Params.inputStyle | default "standard") "buttons") }} 
-        border-radius: $border_radius;
-    {{ else }}
-        border-radius: 0;
-    {{ end }}
-    {{ if (.Site.Params.enableShadow | default false) }}
-        box-shadow: $shadow;
-    {{ else }}
-        box-shadow: none;
-        border: 2px solid var(--default_stroke);
-    {{ end }}
-    max-width: 600px;
-    min-width: 200px;
-    width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-    transform: none;
-    top: #{$margin*2};
-    left: 0; right: 0;
-    background-color: var(--default_bg) !important;
-    color: var(--default_fg) !important;
-    z-index: 9999;
-    > a {  // "Use a Matrix client" button
-        @include buttonLike;
-        align-self: flex-end;
-        > button {
-            background-color: transparent !important;
-            border: none !important;
-            box-shadow: none !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-    }
-    .cactus-login-buttons {
-        margin: 0;
-        justify-content: flex-end;
-        > button {
-            flex-grow: 0;
-            white-space: nowrap;  // otherwise labels go 1 line per word
-        }
-    }
-}
-
-#fediInstanceDialog {
-    display: none;
-    position: fixed;
-    top: 0; bottom: 0; left: 0; right: 0;
-    
-    .dialog {
-        {{ if (.Site.Params.enableShadow | default false) }}
-            box-shadow: $shadow;
-        {{ else }}
-            box-shadow: none;
-            border: 2px solid var(--default_stroke);
-        {{ end }}
-        box-sizing: border-box;
-        position: absolute;
-        display: flex; flex-direction: column;
-        top: #{$margin*2};
-        left: 50%; transform: translateX(-50%);
-        z-index: 9999;
-        background-color: var(--default_bg);
-        width: 450px;
-        max-width: 100%;
-        padding: $margin;
-        {{ if (eq (site.Params.inputStyle | default "standard") "buttons") }}
-            border-radius: $border_radius;
-        {{ end }}
-        h1, h2, h3, h4 {
-            margin: 0;
-        }
-        h2 {
-            margin-bottom: 24px;
-        }
-        input {
-            display: block;
-        }
-        .buttons {
-            margin: $margin 0;
-            display: flex;
-            flex-direction: row;
-            justify-content: end;
-            > * {
-                margin: 5px 0 5px $margin;
-                display: block;
-            }
-        }
-    }
-    .bg {
-        z-index: 99;
-        position: absolute;
-        top: 0; bottom: 0; left: 0; right: 0;
-        background-color: rgba(0, 0, 0, .4);
-        cursor: pointer;
-    }
-    &.open {
-        display: block;
     }
 }
 
