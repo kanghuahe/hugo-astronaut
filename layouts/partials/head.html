@@ -24,9 +24,13 @@
         {{ end }}
         {{ .Site.Title | default "KanghuaHe" }}
     </title>
-
-    <link href="/symbols-nerd-font/symbols-nerd-font.css" rel="stylesheet"/>
-    <link href="/jetbrains-mono/jetbrains-mono.css" rel="stylesheet"/>
+    {{/*
+        if the two css files has changed, you must update these hashes.
+        how to update these hashes:
+        cat static/jetbrains-mono/jetbrains-mono.css | openssl dgst -sha512 -binary | openssl base64 -A
+    */}}
+    <link href="/symbols-nerd-font/symbols-nerd-font.css" rel="stylesheet" integrity="sha512-9nXPI5txfkCkqj9In9PiG8GRxKvqBEIsb9+kIZALm5Fqm9svADk66s+EKUnZZvmRlbOTDfTFSI3QLQ12W9ZOhg==" />
+    <link href="/jetbrains-mono/jetbrains-mono.css" rel="stylesheet" integrity="sha512-tJxlgL6v1Y7kFf+qB8SloaAMKnOAw6WouknxXtIjkBux9Y/9aX81EUWOJO8c/3l98DmjG8brr4to7zaez606Fg==" />
     {{ $style := resources.Get "/scss/style.scss" | resources.ExecuteAsTemplate "/scss/style.scss" . | resources.ToCSS (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" "true") | resources.Fingerprint "sha512" }}
     <link type="text/css" rel="stylesheet" href={{ $style.RelPermalink }} integrity="{{ $style.Data.Integrity }}" />
     {{- partial "head_meta_seo.html" . -}}
