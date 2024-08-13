@@ -211,8 +211,7 @@ summaryLength = 70
 
 ## 主题颜色
 
-主题的颜色可以完全自定义配置。在主题的[`data/colors.yml`](data/colors.yml)中定义的颜色的配置。只需要将该文件复制到
-你的站点下的`data/colors.yml`文件中，然后通过修改该文件既可自定义主题颜色。
+主题的颜色可以完全自定义配置。在主题的[`data/colors.yml`](data/colors.yml)中定义的颜色的配置。只需要将该文件复制到你的站点下的`data/colors.yml`文件中，然后通过修改该文件自定义主题颜色。
 
 ## 页脚信息栏
 
