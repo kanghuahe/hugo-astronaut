@@ -1,130 +1,175 @@
 ![logo](static/logo.svg)
 
-# Ficurinia
+# Astronaut
 
-A prickly blog theme for Hugo
+Astronaut 是一个简约、漂亮且功能丰富的 Hugo 博客主题。
 
-![](images/tn.png)
+> 该主题源自于 [Gabriele Musco](https://gabmus.org/) 的 [hugo-ficurinia](https://gitlab.com/gabmus/hugo-ficurinia) 主题，Astronaut 是在其基础上优化和改进而来的。在此非常感谢 Gabriele Musco 对其主题的精心打磨。
 
-# [Demo](https://gabmus.org)
+## 站点配置
 
-[Code for the demo website](https://gitlab.com/gabmus/gabmus.gitlab.io) (really my personal website)
-
-[Screenshot gallery](https://gabmus.gitlab.io/hugo-ficurinia-screenshots/) showcasing 256 of the possible configurations that Ficurinia offers.
-
-# Customization
-
-## Configuration
-
-These are some parameters you can use in your `config.toml` to customize Ficurinia:
+在Hugo站点配置文件 `hugo.toml` 中，添加下面的参数可以定制 Astronaut 的一些功能。
 
 ```toml
+# 站点的根URL
 baseURL = "https://example.com/"
-theme = "hugo-ficurinia"
-title = "My nice blog"
+
+# 主题
+theme = "hugo-astronaut"
+
+# 标题
+title = "My Blog"
+
+# 站点的语言标识码
 languageCode = "en"
+
+# 站点内容默认语言
+# 可以控制内容中i18n词条展示对应语言的翻译
 defaultContentLanguage = "en"
 
-# this will be included in the footer after the current year the site is last
-# built, followed by the (c) symbol
-# you can use markdown inside this field
+# 版权信息
+# 这个内容将展示在页脚当前站点构建年份后：2024 © copyright
+# 版权信息支持 Markdown 语法
 copyright = "Some copyright notice - [my license](https://example.com/license)"
 
-paginate = 5  # number of articles per page in the index
-summaryLength = 70  # number of words for article summaries
+# 单页文章个数
+paginate = 5
+
+# 文章摘要字数
+summaryLength = 70
 
 
 [params]
-    author = "Gabriele Musco"
-    description = "A description for my website"  # this will be added as metadata
 
-    posts = "posts"  # content directory where to find home page posts; default searches in "posts" and "post"
-    showPostsLink = true  # show or hide the link to the simple post list
+    # Meta信息（SEO优化）
+    author = "Kanghua He" # 文章作者
+    description = "A description for my website" # 站点描述信息
 
-    # shows a specified single page as a home page, instead of the traditional articles list
-    # requires setting `homeSinglePage`
-    showSinglePageAsHome = false
+
+    # 文章内容目录
+    posts = "posts" # 首页文章将从这个目录中获取，默认值: "posts" "post"
+    
+
+    # 首页配置
+    # 是否将一个特殊的单页面作为首页展示，用来替换传统的文章列表首页
+    # 开启此参数需要配置首页路径 “homeSinglePage”
+    showSinglePageAsHome = false # 默认值: false
     homeSinglePage = "/home"
 
-    # It's best to put these icons in the "static" folder of your site
+    # 站点图标（最好将图标放在自己站点的 "static" 目录中）
     logo = "/logo.svg"
     favicon = "/favicon.png"  # 32x32
     faviconIco = "/favicon.ico"  # 32x32
     appletouch = "/apple-touch-icon.png"  # 180x180
     svgicon = "/logo.svg"
-    icon512 = "/icon512.png"  # 512x512 png image
+    icon512 = "/icon512.png"  # 512x512
 
-    logoRightOfTitle = false  # positions the logo to the right of the title; default: false
+    # 图标在标题右侧展示
+    logoRightOfTitle = false  # 默认值: false
 
-    showTags = true  # show the Tags menu item; default true
-    showRss = true  # show the link for the RSS feed; default true
+    # 展示RSS图标
+    showRss = true # 默认值: true
 
-    imageInArticlePreview = false  # show images in article preview; default false
-    fitImageInArticlePreview = false  # make article preview images fit the article preview instead of getting cropped
-    articleSummary = true  # show a summary in article preview; default true
+    # 图片在文章预览页面中展示
+    imageInArticlePreview = false # 默认值: false
+
+    # 调整图片大小以适配文章预览（非裁剪）
+    fitImageInArticlePreview = false # 默认值: false
+
+    # 文章预览页面展示文章摘要
+    articleSummary = true # 默认值: true
     
-    fontFamily = "JetBrains Mono"  # changes the font, default "JetBrains Mono"
-    titleFontFamily = "JetBrains Mono"  # font used for titles and headings
-    monospaceFontFamily = "JetBrains Mono"  # changes the monospace font for code, default "JetBrains Mono"
+    # 字体
+    fontFamily = "JetBrains Mono" # 默认值: "JetBrains Mono"
+    titleFontFamily = "JetBrains Mono"  # 标题和头部字体 默认值: "JetBrains Mono"
+    monospaceFontFamily = "JetBrains Mono"  # 代码块字体 默认值: "JetBrains Mono"
 
-    # multipliers applied to font sizes, useful for custom fonts that may be too big or too small
-    titleFontSizeMultiplier = 1.0
-    mainFontSizeMultiplier = 1.0
-    monoFontSizeMultiplier = 1.0
+    # 字体大小（放大或缩小倍数）
+    titleFontSizeMultiplier = 1.0 # 标题字体大小
+    mainFontSizeMultiplier = 1.0 # 页面内容字体大小
+    monoFontSizeMultiplier = 1.0 # 代码字体大小
 
-    contentWidth = "1000px"  # maximum width of the site content, css syntax
+    # 文章内容宽度
+    contentWidth = "1200px"
 
-    paperCards = false  # enable paper card style; default false
-    buttonTags = false  # enable button tag style; default false
-    tagsInArticlePreview = true  # enable tags list in the article preview card
-    gridView = false  # show post list as a grid. goes well with paperCards
-    bigArticleTitle = false  # makes the title in the single article view bigger
-    navtype = "standard"  # changes the style of the pagination, available styles are: "standard", "circles"
-    enableShadow = false  # shows a shadow around some elements
-    menuStyle = "standard"  # changes the style of the main site navigation menu, available styles are: "standard", "buttons"
-    inputStyle = "standard" # changes the style of inputs (like the searchbar), available styles are: "standard", "buttons"
+    # 卡片风格展示文章列表
+    paperCards = false # 默认值: false
 
-    enableSearch = true  # enable search page
-    searchbarEverywhere = true  # if the searchbar should be shown in every page; requires 
-    mobileHamburgerNav = false  # alternative hamburger menu layout for the main nav menu when screen is small
+    # 卡片风格中使用网格布局展示文章列表
+    gridView = false # 默认值: false
 
-    enableFeatured = false  # enable a particular view for articles marked as featured (featured: true in the article frontmatter)
+    # 按钮风格展示文章内容中的标签
+    buttonTags = false # 默认值: false
 
-    underlineTitleLinks = false  # show an underline also for links that are titles
+    # 文章预览页面展示文章的标签
+    tagsInArticlePreview = true # 默认值: true
 
-    # enable analytics using Umami
+    # 文章内容页面是否展示大标题
+    bigArticleTitle = false # 默认值: false
+
+    # 分页按钮样式
+    navtype = "standard" # 可用样式: "standard", "circles" 默认值: "standard"
+    
+    # 菜单栏样式
+    menuStyle = "standard" # 可用样式: "standard", "buttons" 默认值: "standard"
+    
+    # 输入框样式
+    inputStyle = "standard" # 可用样式: "standard", "buttons" 默认值: "standard"
+
+    # 展示阴影样式
+    enableShadow = false # 默认值: false
+
+    # 开启搜索
+    enableSearch = true # 默认值: true
+
+    # 任何页面都展示搜索框
+    searchbarEverywhere = true # 默认值: true
+
+    # 小屏幕浏览时使用汉堡菜单风格
+    mobileHamburgerNav = false # 默认值: false
+
+    # 在文章预览页面采用特殊视图展示文章（对应文章的frontmatter中要配置featured: true）
+    enableFeatured = false # 默认值: false
+
+    # 文章标题显示下划线
+    underlineTitleLinks = false # 默认值: false
+
+    # 使用Umami进行网站分析（需要在Umami网站上获取下面的配置信息）
     umamiScriptUrl = "https://something.com/..."
     umamiWebsiteId = "example-tracking-code"
 
-    tocBeforeImage = false  # show the table of contents before the main article image; default false
+    # 文章内容页面中TOC内容在图片之前
+    tocBeforeImage = false # 默认值: false
 
+    # 侧边栏布局
+    enableSidebarLayout = false # 默认值: false
 
-    # you can customize all of the colors in this theme
-    # Colors are defined in data/colors.yml
+    # TOC在侧边栏显示
+    tocInSidebar = false # 需要开启 enableSidebarLayout = true 默认值: false
 
-    # alternative sidebar layout
-    enableSidebarLayout = false
-    tocInSidebar = false  # if the sidebar is enbabled, show the TOC in the sidebar
-
-    # redirect to baseURL if current URL host doesn't match
-    # useful if deploying in gitlab pages with custom domain and don't want
-    # the username.gitlab.io/website url to persist
-    # this requires you to set baseURL (see above)
+    # 强制重定向
     forceRedirect = false
 
-    infiniteScrolling = false  # activates infinite scrolling instead of regular pagination
-                               # NOTE: you need to enable JSON output for this to work!
-                               #       look at the [outputs] section below
-    enableFooterColumns = false  # activates footer columns, as described below
-    enableJumbotron = false  # enables jumbotron, as described below
-    # related articles will be selected randomly based on tags and shown at
-    # the bottom of the article, after the comments
-    enableRelatedArticles = false
-    relatedArticlesNum = 2  # how many related articles to show
-    randomRelated = false  # sorts related articles in random order (randomized at built time)
+    # 无限滚动
+    infiniteScrolling = false  # 无限滚动模式替换分页模式（需要在[outputs]中配置输出JSON格式）
 
+    # 页脚信息栏（后文有详细描述）
+    enableFooterColumns = false  # 默认值: false
+
+    # 巨幕（后文有详细描述）
+    enableJumbotron = false  # 默认值: false
+
+    # 展示相关文章
+    enableRelatedArticles = false
+    # 相关文章数量
+    relatedArticlesNum = 2 # 默认值: 2
+    # 随机展示相关文章顺序
+    randomRelated = false # 按时间随机排序 默认值: false
+
+# 导航栏菜单
+# 菜单固定展示(Home, Posts, Categories, Tags, About)
 [menu]
-    # these links (menu.icons) will be added as icon links below the main nav
+    # 图标菜单
     [[menu.icons]]
         identifier = "gitlab"
         name = "GitLab"
@@ -136,16 +181,14 @@ summaryLength = 70  # number of words for article summaries
         url = "https://gitlab.gnome.org/gabmus"
         weight = 20
 
-# this section is necessary if you want infinite scrolling
-# it allows to output the article list as paged JSON so that "pages" can be retrieved via javascript
+# 开启了无限滚动的话必须配置JSON输出
+# 这样就可以通过JavaScript访问JSON格式的文章内容
 [outputs]
-    home = ["HTML", "JSON"]
+    home = ["HTML", "JSON"]     
 ```
 
-### Supported icons
-
-For the `[[menu.icons]]` menu. They match identifier, name and url can be whatever. Here's a list of supported identifiers:
-
+### 支持的图标
+主题中为`[[menu.icons]]`图标菜单内置了一些图标，可以通过identifier匹配对应图标。下面是一些支持的图标标识：
 - discord
 - email
 - facebook
@@ -166,38 +209,32 @@ For the `[[menu.icons]]` menu. They match identifier, name and url can be whatev
 - xmpp
 - youtube
 
-## Colors
+## 主题颜色
 
-Colors are completely customizable. They are defined in [`data/colors.yml`](data/colors.yml). Just copy that file over to `yoursite/data/colors.yml` and customize it to your liking.
+主题的颜色可以完全自定义配置。在主题的[`data/colors.yml`](data/colors.yml)中定义的颜色的配置。只需要将该文件复制到
+你的站点下的`data/colors.yml`文件中，然后通过修改该文件既可自定义主题颜色。
 
-## Footer columns
+## 页脚信息栏
 
-You can add various columns of links in the footer using the `data/footer_columns.yml` file.
-
-Following is an example configuration:
+如果需要在页脚展示一些链接信息，那么可以在你的站点中新建`data/footer_columns.yml`配置文件，然后按照下面的示例配置需要展示的链接信息即可。
 
 ```yaml
 - title: My other projects
   links:
-    - title: HydraPaper
-      link: https://hydrapaper.gabmus.org
-    - title: Ada UI
-      link: https://gitlab.com/gabmus/ada-ui
+    - title: Project1
+      link: https://project1.com
+    - title: Project2
+      link: https://project2.com
 - title: About me
   links:
     - title: My personal website
-      link: https://gabmus.org
-    - title: My GitLab
-      link: https://gitlab.com/gabmus
-    - title: My GNOME GitLab
-      link: https://gitlab.gnome.org/gabmus
+      link: https://mysite.com
+    - title: My GitHub
+      link: https://github.com/mygithubxxx
 ```
 
-## Jumbotron
-
-You can add a jumbotron at the beginning of the home page using the `data/jumbotron.yml` file.
-
-Following is an example configuration:
+## 巨幕
+可以通过在你的站点的`data/jumbotron.yml`文件来配置添加一个在首页开始前的巨幕。下面是示例配置：
 
 ```yaml
 title: My awesome website
@@ -206,45 +243,42 @@ subtitle: Some fancy subtitle
 image: /jumbotron_image.svg
 imagePosition: left  # values: left, right, top, bottom
 background: /img/jumbotron_bg.png
-backgroundVideo: /jumbotron_video.mp4  # will replace the background image
-# it's best to provide both an mp4 and a web source for the video for better compatibility
+backgroundVideo: /jumbotron_video.mp4  # 可替换background
+# 最好同时提供mp4和web源以达到更好的适配效果
 backgroundVideoMp4: /jumbotron_video.mp4
 backgroundVideoWebm: /jumbotron_video.webm
 videoOpacity: 1.0
 textShadow: false
 fullscreen: false
 downArrow: false
-whiteText: false  # force white text in the jumbotron
+whiteText: false  # 巨幕中强制显示白色文本
 links:
   - title: About me
-    link: /pages/about
+    link: /about
   - title: Read my blog
     link: /posts
 ```
 
-# Post parameters
+# 文章参数
+每个文章都会包含一些参数在frontmatter中，下面是一些参数的示例：
 
-Every post can have various parameters in the frontmatter, here are some that you may find useful
+- `title`: 文章标题
+- `date`: 日期时间，通常是创建文件时自动生成
+- `description`: 文章描述（SEO优化）
+- `tags`: 文章标签（数组类型）
+- `image`: 文章图片（在阅览和精选时会展示）
+- `alt`: 图片不存在时展示的文本
+- `imageCaption`: 图片下方的标题（MarkDown格式渲染）
+- `featured`: boolean, 标注文章是否为精选
+- `comments`: boolean, 是否开启文章评论(默认使用Disqus)
+- `showDate`: boolean, 是否展示日期（适用于非文章页面）
+- `showTitle`: boolean, default: true, 是否隐藏标题
+- `norss`: boolean, 是否添加到RSS
+- `nosearch`: boolean, 是否可搜索
+- `toc`: boolean, 是否展示文章内容目录
 
-- `title`: the title of the article
-- `date`: usually automatically populated, holds the date and time of the post creation
-- `description`: a brief description of the post, useful for SEO optimization
-- `tags`: an array of tags, useful for searching similar articles
-- `image`: a link to a feature image for the article, shown in the preview as well
-- `alt`: alternative text to be shown if image is not available or fails to download
-- `imageCaption`: a markdown text rendered as a caption for the article image described above
-- `featured`: boolean, indicate if the post should be shown as featured
-- `comments`: boolean, if true it enables comments for the current post, if false it disables them (default is true)
-- `showDate`: boolean, true by default, if false hides the date. Useful for non-article pages where the date isn't important
-- `showTitle`: boolean, true by default, if false hides the title.
-- `showShare`: boolean, true by default, if false hides the share button.
-- `norss`: boolean, if set to true the page will be skipped in the rss feed
-- `nosearch`: boolean, if set to true the page won't show up in searches
-- `toc`: boolean, if set to true a table of contents will be shown for the article
-
-## Table of contents settings
-
-You can tweak the TOC settings in your `config.toml`:
+## 文章内容目录
+可以在站点的配置文件`hugo.toml`中配置文章内容目录的展示格式。
 
 ```toml
 [markup]
