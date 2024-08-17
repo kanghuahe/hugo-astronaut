@@ -265,16 +265,17 @@ links:
 - `date`: 日期时间，通常是创建文件时自动生成
 - `description`: 文章描述（SEO优化）
 - `tags`: 文章标签（数组类型）
+- `categories`: 文章分类（数组类型）
 - `image`: 文章图片（在阅览和精选时会展示）
 - `alt`: 图片不存在时展示的文本
 - `imageCaption`: 图片下方的标题（MarkDown格式渲染）
-- `featured`: boolean, 标注文章是否为精选
-- `comments`: boolean, 是否开启文章评论(默认使用Disqus)
-- `showDate`: boolean, 是否展示日期（适用于非文章页面）
-- `showTitle`: boolean, default: true, 是否隐藏标题
-- `norss`: boolean, 是否添加到RSS
-- `nosearch`: boolean, 是否可搜索
-- `toc`: boolean, 是否展示文章内容目录
+- `featured`: default: false 标注文章是否为精选
+- `comments`: default: true 是否开启文章评论(默认使用Disqus)
+- `showMetaInfo`: default: true 是否展示日期、字数、阅读时间等信息（适用于非文章页面）
+- `showTitle`: default: true, 是否隐藏标题
+- `norss`: default: false, 是否添加到RSS
+- `nosearch`: default: false, 是否可搜索
+- `toc`: default: false, 是否展示文章内容目录
 
 ## 文章内容目录
 可以在站点的配置文件`hugo.toml`中配置文章内容目录的展示格式。
