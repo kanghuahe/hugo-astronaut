@@ -2,13 +2,10 @@
 title: "{{ replace (replace .Name "-" " ") "_" " " | title }}"
 date: {{ .Date }}
 description:
-tags: ["tag1", "tag2"]
-categories: ["cat1","cat2"]
-image: 
-alt:
-imageCaption:
-featured:
+tags: []
+categories: []
 comments: true
+showMetaInfo: true
 toc: true
 ---
 
