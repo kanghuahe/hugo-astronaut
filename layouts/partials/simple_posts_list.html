@@ -3,7 +3,11 @@
     {{ $section := .Section | humanize }}
 
     {{if and ( and (ne $section "Categories") (ne $section "Tags")) (eq $section $title)}}
-        {{$section}}
+        {{ if eq $section "Posts"}}
+            {{ i18n "postsColumn" }}
+        {{ else }}
+            {{ $section }}
+        {{ end }}
     {{ else }}
         {{ if and (eq $section "Categories") (eq $section $title) }}
             {{ i18n "categoriesColumn" }}

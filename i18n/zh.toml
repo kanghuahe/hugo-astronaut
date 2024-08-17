@@ -34,20 +34,23 @@ other = "首页"
 [posts]
 other = "文章"
 
+[postsColumn]
+other = "文章："
+
 [search]
 other = "搜索"
 
 [tagsColumn]
-other = "标签:"
+other = "标签："
 
 [tagColumn]
-other = "标签:"
+other = "标签："
 
 [categoriesColumn]
-other = "分类:"
+other = "分类："
 
 [categoryColumn]
-other = "分类:"
+other = "分类："
 
 [morePostsLikeThis]
 other = "更多相关文章"

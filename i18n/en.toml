@@ -33,6 +33,9 @@ other = "Home"
 [posts]
 other = "Posts"
 
+[postsColumn]
+other = "Posts:"
+
 [search]
 other = "Search"
 
