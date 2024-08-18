@@ -208,6 +208,7 @@ summaryLength = 70
 - twitter
 - xmpp
 - youtube
+- wechat
 
 ## 主题颜色
 
