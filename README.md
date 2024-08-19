@@ -48,13 +48,6 @@ summaryLength = 70
 
     # 文章内容目录
     posts = "posts" # 首页文章将从这个目录中获取，默认值: "posts" "post"
-    
-
-    # 首页配置
-    # 是否将一个特殊的单页面作为首页展示，用来替换传统的文章列表首页
-    # 开启此参数需要配置首页路径 “homeSinglePage”
-    showSinglePageAsHome = false # 默认值: false
-    homeSinglePage = "/home"
 
     # 站点图标（最好将图标放在自己站点的 "static" 目录中）
     logo = "/logo.svg"
