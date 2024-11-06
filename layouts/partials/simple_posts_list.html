@@ -30,13 +30,13 @@
     {{ if and (eq $section "Tags") (eq $section $title) }}
         {{ range (sort .Pages "Title") }}
             <li>
-                <a href="{{ .Permalink }}">#{{ .Title }}<sup>{{.Pages.Len}}</sup></a>
+                <a href="{{ .Permalink }}"><b>#{{ .Title }}</b></a>
             </li>
         {{ end }}
     {{ else if and (eq $section "Categories") (eq $section $title) }}
         {{ range (sort .Pages "Title") }}
         <li>
-            <a href="{{ .Permalink }}">{{ .Title }}<sup>{{.Pages.Len}}</sup></a>
+            <a href="{{ .Permalink }}"><b>{{ .Title }}</b></a>
         </li>
         {{ end }}
     {{ else }}
