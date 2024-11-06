@@ -5,7 +5,7 @@ $dark_hl_bg:       {{ $colors.dark.hl_bg      | default "#34363b" }};
 $dark_fg:          {{ $colors.dark.fg         | default "white"   }};
 $dark_dim_fg:      {{ $colors.dark.dim_fg     | default "#bababa" }};
 $dark_stroke:      {{ $colors.dark.stroke     | default "#4f4f4f" }};
-$dark_accent:      {{ $colors.dark.accent     | default "#db5793" }};
+$dark_accent:      {{ $colors.dark.accent     | default "#2684fc" }};
 $dark_sidebar_bg:  {{ $colors.dark.sidebar.bg | default "#34363b" }};
 $dark_sidebar_fg:  {{ $colors.dark.sidebar.fg | default "white"   }};
 
@@ -14,7 +14,7 @@ $light_hl_bg:      {{ $colors.light.hl_bg      | default "#e6e6e6" }};
 $light_fg:         {{ $colors.light.fg         | default "#262625" }};
 $light_dim_fg:     {{ $colors.light.dim_fg     | default "#40403e" }};
 $light_stroke:     {{ $colors.light.stroke     | default "#575754" }};
-$light_accent:     {{ $colors.light.accent     | default "#db5793" }};
+$light_accent:     {{ $colors.light.accent     | default "#2684fc" }};
 $light_sidebar_bg: {{ $colors.light.sidebar.bg | default "#e6e6e6" }};
 $light_sidebar_fg: {{ $colors.light.sidebar.fg | default "#121211" }};
 
