@@ -37,7 +37,7 @@ defaultContentLanguage = "en"
 copyright = "Some copyright notice - [my license](https://example.com/license)"
 
 # 单页文章个数
-paginate = 5
+pagination.pagerSize = 5
 
 # 文章摘要字数
 summaryLength = 70
@@ -160,16 +160,6 @@ hasCJKLanguage = true
 
     # 巨幕（后文有详细描述）
     enableJumbotron = false  # 默认值: false
-
-    # 展示相关文章
-    enableRelatedArticles = false
-
-    # 相关文章数量
-    relatedArticlesNum = 2 # 默认值: 2
-
-    # 随机展示相关文章顺序
-    # 按时间随机排序
-    randomRelated = false # 默认值: false
 
 # 导航栏菜单
 [menu]
