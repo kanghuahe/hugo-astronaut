@@ -1,0 +1,19 @@
+<nav>
+    {{ if (.Site.Params.mobileHamburgerNav | default false) }}
+        <input type="checkbox" id="main-nav-toggler" />
+    {{ end }}
+    <ul id="main-nav">
+        {{ $languageCode := .Language.Lang }}
+        {{ range .Site.Menus.main }}
+            <li>
+                <a href="{{ .URL | safeURL }}">
+                    {{ if (i18n .Identifier $languageCode) }}
+                        {{ i18n .Identifier }}
+                    {{ else }}
+                        {{ .Name }}
+                    {{ end }}
+                </a>
+            </li>
+        {{ end }}
+    </ul>
+</nav>

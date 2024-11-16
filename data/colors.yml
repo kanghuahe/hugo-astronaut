@@ -1,0 +1,22 @@
+default: light # 亮色模式
+auto_switch: false # 自动切换模式
+dark:
+  bg: '#242629' # 站点背景色
+  hl_bg: '#34363b' # 卡片风格下卡片和圆形分页按钮背景色
+  fg: 'white' # 字体颜色
+  dim_fg: '#bababa' # 时间和标签信息颜色
+  stroke: '#4f4f4f' # 图标、菜单边框颜色
+  accent: '#2684fc' # 强调色
+  sidebar:
+    bg: '#34363b' # 侧边栏背景色
+    fg: 'white' # 侧边栏字体颜色
+light:
+  bg: '#f5f5f5'
+  hl_bg: '#e6e6e6'
+  fg: '#262625'
+  dim_fg: '#40403e'
+  stroke: '#575754'
+  accent: '#2684fc'
+  sidebar:
+    bg: '#e6e6e6'
+    fg: '#121211'

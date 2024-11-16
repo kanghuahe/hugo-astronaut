@@ -1,0 +1,8 @@
+{{ define "main" }}
+
+    {{/* get all the pages that are regular posts and not pages */}}
+    {{ $postsDir := .Site.Params.Posts | default (slice "posts" "post") }}
+    {{ $allPostsList := where (where site.RegularPages "Section" "in" $postsDir) "Section" "!=" "" }}
+    {{- partial "home_post_list.html" (dict "Ctx" . "AllPostsList" $allPostsList) -}}
+
+{{ end }}

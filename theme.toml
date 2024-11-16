@@ -1,0 +1,21 @@
+name = "Hugo Astronaut"
+license = "AGPL3"
+licenselink = "https://github.com/kanghuahe/hugo-astronaut/blob/master/LICENSE"
+description = "A simple and beautiful blog theme for Hugo"
+homepage = "https://github.com/kanghuahe/hugo-astronaut"
+tags = ["blog", "dark", "customizable", "simple"]
+features = ["posts", "comments", "analytics"]
+
+[author]
+  name = "Kanghua He"
+  homepage = "https://blog.kanghuahe.online"
+
+[original]
+    author = "Gabriele Musco"
+    homepage = "https://gabmus.org"
+    repo = "https://gitlab.com/gabmus/hugo-ficurinia"
+
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "v0.134.3+extended"

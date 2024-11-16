@@ -1,0 +1,68 @@
+[404message]
+other = "未找到对应页面"
+
+[searchbarTxt]
+other = "搜索"
+
+[tags]
+other = "标签"
+
+[categories]
+other = "分类"
+
+[about]
+other = "关于"
+
+[date]
+other = "日期"
+
+[continueReading]
+other = "继续阅读"
+
+[previousPage]
+other = "上一页"
+
+[nextPage]
+other = "下一页"
+
+[themeCopyrightNotice]
+other = "<a href='https://github.com/kanghuahe/hugo-astronaut'>Astronaut theme</a> for <a href='https://gohugo.io'>Hugo</a> by <a href='https://blog.kanghuahe.online'>Kanghua He</a>. Licensed under <a href='https://www.gnu.org/licenses/agpl-3.0.html'>GNU AGPLv3</a>."
+
+[home]
+other = "首页"
+
+[posts]
+other = "文章"
+
+[postsColumn]
+other = "文章："
+
+[search]
+other = "搜索"
+
+[tagsColumn]
+other = "标签："
+
+[tagColumn]
+other = "标签："
+
+[categoriesColumn]
+other = "分类："
+
+[categoryColumn]
+other = "分类："
+
+[noResultsFound]
+other = "未找到相关文章"
+
+[wordCount]
+other = "字数"
+
+[words]
+other = "字"
+
+[readingTime]
+other = "阅读时间"
+
+[time]
+other = "分钟"

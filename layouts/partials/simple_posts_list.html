@@ -1,0 +1,59 @@
+<h2>
+    {{ $title := .Title }}
+    {{ $section := .Section | humanize }}
+
+    {{if and ( and (ne $section "Categories") (ne $section "Tags")) (eq $section $title)}}
+        {{ if eq $section "Posts"}}
+            {{ i18n "postsColumn" }}
+        {{ else }}
+            {{ $section }}
+        {{ end }}
+    {{ else }}
+        {{ if and (eq $section "Categories") (eq $section $title) }}
+            {{ i18n "categoriesColumn" }}
+        {{ else }}
+            {{ if and (eq $section "Categories") (ne $section $title) }}
+                {{ i18n "categoryColumn" }} {{ $title }}
+            {{ end }}
+        {{ end }}
+
+        {{ if and (eq $section "Tags") (eq $section $title) }}
+            {{ i18n "tagsColumn" }}
+        {{ else }}
+            {{ if and (eq $section "Tags") (ne $section $title) }}
+                {{ i18n "tagColumn" }} #{{ $title }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</h2>
+<ul class="list">
+    {{ if and (eq $section "Tags") (eq $section $title) }}
+        {{ range (sort .Pages "Title") }}
+            <li>
+                <a href="{{ .Permalink }}"><b>#{{ .Title }}</b></a>
+            </li>
+        {{ end }}
+    {{ else if and (eq $section "Categories") (eq $section $title) }}
+        {{ range (sort .Pages "Title") }}
+        <li>
+            <a href="{{ .Permalink }}"><b>{{ .Title }}</b></a>
+        </li>
+        {{ end }}
+    {{ else }}
+        {{ range .Pages.GroupByDate "2006-01" "desc" }}
+            <h3>{{ .Key }}</h3>
+            {{ range .Pages }}
+                <li>
+                    <div>
+                        <span class="date">
+                            {{- partial "date.html" .Date -}}
+                        </span>
+                        <span>
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </span>
+                    </div>
+                </li>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</ul>
